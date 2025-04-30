@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Carte Touristique</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    #map {
+      flex: 1;
+    }
+
+    #nav-items {
+      display: flex;
+      gap: 2rem;
+      padding: 0.5rem;
+      background: #f5f5f5;
+      border-bottom: 1px solid #ccc;
+      overflow-x: auto;
+      justify-content: center;
+    }
+
+    #nav-items button {
+      padding: 0.5rem 0.5rem;
+      background: #6ace72;
+      color: white;
+      border: solid 2px black;
+      cursor: pointer;
+      border-radius: 50%;
+      flex-shrink: 0;
+      height: 5em;
+      width: 5em;
+    }
+
+    #nav-items button:hover {
+      background: #6ace72;
+    }
+
+    #legend {
+      padding: 0.5rem 1rem;
+      background: #e8e8e8;
+      border-top: 1px solid #ccc;
+    }
+
+    .legend-item {
+      margin-bottom: 0.5rem;
+    }
+
+    #info-panel h2 {
+    margin: 0 0 0.5rem 0;
+    }
+
+    #info-panel p {
+    margin: 0.5rem 0 0 0;
+    }
+
+    #nav-items .tour-button {
+    background: #2ECC40;
+    color: white;
+    font-weight: bold;
+    border: 2px solid #27ae60;
+    }
+
+    #nav-items .tour-button:hover {
+    background: #27ae60;
+    }
+
+  </style>
+</head>
+<body>
+    <div id="nav-items"></div>
+    <div id="map" style="position:relative">
+        <div id="info-panel" style="display:none; position:absolute; bottom: 50%;; left:65%; width:25%; background:white; border-top:1px solid #ccc; padding:1rem; box-shadow:0 -2px 5px rgba(0,0,0,0.1); z-index:1000;"></div>
+    </div>
+
+    <div id="legend"></div>
+    <div id="info-panel" style="display:none; position:absolute; bottom:0; left:0; width:100%; background:white; border-top:1px solid #ccc; padding:1rem; box-shadow:0 -2px 5px rgba(0,0,0,0.1); z-index:1000;"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
