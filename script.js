@@ -62,8 +62,6 @@ const points = [
     navButton.dataset.id = point.id;
     navItems.appendChild(navButton);
 
-
-
     const legendItem = document.createElement('div');
     legendItem.id = `legend-${point.id}`;
     legendItem.className = 'legend-item';
@@ -94,14 +92,13 @@ const points = [
   .sort((a, b) => a.id - b.id)
   .map(point => point.coords);
 
-
   const tourButton = document.createElement('button');
   tourButton.innerText = 'Tour complet';
   tourButton.addEventListener('click', startTour);
   tourButton.classList.add('tour-button');
   navItems.appendChild(tourButton);
-  
-L.polyline(orderedCoords, { color: 'blue', weight: 3, smoothFactor: 1 }).addTo(map);
+
+L.polyline(orderedCoords, { color: 'black', weight: 3, smoothFactor: 1 }).addTo(map);
 
 function startTour() {
     points.sort((a, b) => a.id - b.id).forEach((point, index) => {
